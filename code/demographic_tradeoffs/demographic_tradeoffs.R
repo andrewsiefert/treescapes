@@ -361,20 +361,6 @@ sr_hmax2 <- sr_hmax %>%
          trait = "hmax",  
          select(tradeoff, trait, everything()))
 
-#### Plot ----
-ggplot(sr_hmax2, aes(x = growth_est, xmin = growth_lo, xmax = growth_hi, 
-                   y = recr_est, ymin = recr_lo, ymax = recr_hi, 
-                   color = hmax)) + 
-  geom_pointrange() +
-  geom_errorbarh() +
-  geom_point(size = 1.8) +
-  facet_wrap(~mat)  + 
-  theme(panel.grid.major = element_blank()) +
-  scale_color_viridis_c(option = "magma") +
-  scale_y_log10() +
-  labs(x = "Growth, 60 cm dbh",
-       y = "Recruitment, 5 dbh", 
-       color = "Maximum height")
 
 # Combine data
 
